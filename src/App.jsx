@@ -5,15 +5,13 @@ import Listings from './components/Listings/Listings';
 
 function App() {
 
-  console.log('render');
-
   const [filters, setFilters] = useState([]);
   const [listings, setListings] = useState([]);
   
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('src/assets/data.json');
+        const res = await fetch('job-listings-react/assets/data.json');
         const jsonData = await res.json();
         filters ?
         setListings(jsonData.filter(obj => filters.every(filter =>

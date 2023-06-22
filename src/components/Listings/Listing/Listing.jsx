@@ -7,7 +7,7 @@ export default function Listing(props) {
 
   const listing = props.listing;
   const tags = [].concat(listing.role, listing.level, listing.languages, listing.tools);
-  const svgUrl = '../../../../src/assets' + listing.logo.substring(1);
+  const svgUrl = 'job-listings-react/assets' + listing.logo.substring(1);
 
   return (
     <div className="listing">
