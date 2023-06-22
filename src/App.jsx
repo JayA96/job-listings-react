@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('job-listings-react/assets/data.json');
+        const res = await fetch('/assets/data.json');
         const jsonData = await res.json();
         filters ?
         setListings(jsonData.filter(obj => filters.every(filter =>
