@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    background-color: white;
+    box-shadow: 0.5rem 1rem 1rem rgba($color-primary, 0.2);
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80vw;
+    transform: translate(-50%, 50%);
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
+
+    &__left {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__right {
+        
+        &>h3 {
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        width: 50rem;
+        padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 86vw;
+    }
+}

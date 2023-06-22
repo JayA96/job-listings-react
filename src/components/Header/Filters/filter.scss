@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.filter {
+    color: $color-primary;
+    background-color: $color-filter;
+    
+    line-height: 1.6;
+    border-radius: 3px;
+    display: flex;
+    overflow: hidden;
+
+    &>h2, &__remove {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &>h2 {
+        padding: 0 1rem;
+    }
+
+    &__remove {
+        background-color: $color-primary;
+        cursor: pointer;
+        padding: 0 0.5rem;
+
+        &>svg {
+            fill-rule: $color-filter;
+        }
+
+        &:hover {
+            background-color: $color-very-dark-cyan;
+        }
+    }
+}

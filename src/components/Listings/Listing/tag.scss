@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.tag {
+    color: $color-primary;
+    background-color: $color-filter;
+    padding: 0 1rem;
+    line-height: 1.6;
+    border-radius: 3px;
+    cursor: pointer;
+}

@@ -1,0 +1,112 @@
+@import '../../../styles/variables';
+
+.listing {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "icon top tags"
+        "icon role tags"
+        "icon info tags";
+    padding: 2rem 4rem;
+    position: relative;
+    align-items: center;
+    column-gap: 2rem;
+    
+    box-shadow: 0.5rem 1rem 1rem rgba($color-primary, 0.2);
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr) repeat(2,min-content);
+        grid-template-areas:
+            "top"
+            "role"
+            "info"
+            "rule"
+            "tags";
+        max-width: 50rem;
+        row-gap: 1.5rem;
+        padding: 3rem 2rem 2rem 2rem;
+    }
+
+    &__marker {
+        background-color: $color-primary;
+        width: 0.5rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &__icon {
+        grid-area: icon;
+        overflow: visible;
+
+        @media only screen and (max-width: $bp-large) {
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            transform: translateY(-50%);
+            height: 4rem;
+            width: 4rem;
+            grid-area: none;
+        }
+
+        &>img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__top-row {
+        grid-area: top;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__company {
+        color: $color-primary;
+    }
+
+    &__featured {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__role {
+        grid-area: role;
+    }
+
+    &__info {
+        grid-area: info;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__rule {
+        display: none;
+        border: 0.1px solid $color-dark-cyan;
+
+        @media only screen and (max-width: $bp-large) {
+            display: inline;
+            grid-area: rule;
+        }
+    }
+
+    &__tags {
+        grid-area: tags;
+        display: flex;
+        justify-content: right;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: $bp-large) {
+            justify-content: left;
+        }
+    }
+}
