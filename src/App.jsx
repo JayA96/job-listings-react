@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('/assets/data.json');
+        const res = await fetch('assets/data.json');
         const jsonData = await res.json();
         filters ?
         setListings(jsonData.filter(obj => filters.every(filter =>
@@ -29,7 +29,9 @@ function App() {
   }, [filters]);
 
   function addFilter(filter) {
-    setFilters(current => [...current, filter]);
+    if (!filters.includes(filter)) {
+      setFilters(current => [...current, filter]);
+    }
   }
   
   function removeFilter(filter) {
